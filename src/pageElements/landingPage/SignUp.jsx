@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { FaTimes, FaGoogle, FaTwitter, FaGithub, FaEye} from 'react-icons/fa';
+import { FaTimes, FaGoogle, FaTwitter, FaGithub} from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import Form from './form'
 // import logo from '../../assets/round-logo.jpg';

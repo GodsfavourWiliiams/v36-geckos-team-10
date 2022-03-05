@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/theme" element={<TemplatePicker />} />
         <Route path="/workspace" element={<Workspace toggleModal={[modalState, setModalState]} changeModal={setModalContent} buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} />} />
-      </Routes>
+      </Routes> 
     </BrowserRouter>
   );
 }
