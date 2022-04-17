@@ -1,44 +1,76 @@
-import banner1 from '../../assets/Other 03.svg';
-// import BtnStyled from "./BtnStyled";
-import SignUp from './SignUp';
-
+import React, { useState } from 'react';
+import banner1 from '../../assets/design-illustration.svg';
+import { Link } from "react-router-dom";
+import Modal from './Modal';
+import { FaTimes } from 'react-icons/fa';
 
 export default function Hero() {
-
-  
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
   return (
-    <div className="relative overflow-hidden z-0">
-      <div className="max-w-7xl mx-auto ">
-        <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-    
-
-          <div className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">Make your website </span>{' '}
-              
-                <span className="block text-indigo-600 xl:inline"> wonderful</span>
-              </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
+    <>
+    <div className="relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Hero content */}
+        <div className="pt-16 pb-12 md:pt-28 md:pb-20">
+          {/* Section header */}
+          <div className="text-center pb-12 md:pb-16">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tighter sm:text-3xl tracking-tighter mb-4">UI components for your web 
+            <span className="text-indigo-800 "> Application.</span></h1>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-sm md:text-xl text-gray-600 mb-8"> Get beautiful, responsive, professionally developed  UI components and build your website
+                <span className=" text-indigo-500 font-semibold"> quicker</span>
+                . Worry less about responsive and beautiful UI, focus more on logic and ship faster.
+                A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                
-                <SignUp/>
-                </div>
+              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <Link to="signin" className=' sm:flex sm:justify-center lg:justify-start'>
+                <button
+                  className="transform transition duration-200 hover:shadow-xl hover:-translate-y-1w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-700 hover:bg-indigo-800 md:py-4 md:text-lg md:px-10 w-full"
+                > Get started
+               </button>
+                </Link>
               </div>
             </div>
           </div>
+
+          {/* Hero image */}
+          <div>
+            <div className="relative flex justify-center mb-8">
+              <div className="flex flex-col justify-center">
+                <img className="mx-auto" src={banner1} width="768" height="432" alt="Hero" />
+              </div>
+              <button className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg" 
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setVideoModalOpen(true); }} >
+                <svg className="w-6 h-6 fill-current text-gray-400 group-hover:text-blue-600 flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" />
+                  <path d="M10 17l6-5-6-5z" />
+                </svg>
+                <span className="ml-3">Watch the full video (2 min)</span>
+              </button>
+            </div>
+
+            {/* Modal */}
+             <Modal show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
+             <button
+                    type="button"
+                    className="absolute top-6 right-3 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8 focus:outline-none"
+                    onClick={() => setVideoModalOpen(false)}
+                  >
+                    <FaTimes className="h-6 w-6 text-indigo-700"/>
+                  </button>  
+              <div className="relative pb-9/16">
+                  
+                  <div className="flex flex-col justify-center">
+                    <img className="mx-auto" src={banner1} width="768" height="432" alt="Hero" />
+                  </div> 
+               </div>
+            </Modal>
+          </div>
+
         </div>
+
       </div>
-      <div className=" lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-52 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-           src={banner1} alt="banner"
-        />
-      </div>
-      
     </div>
+    </>
   )
 }

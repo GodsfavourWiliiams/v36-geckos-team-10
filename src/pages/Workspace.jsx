@@ -18,10 +18,12 @@ const Workspace = ({ toggleModal, buildingBlocks, setBuildingBlocks, changeModal
         return (bodyEl.style.overflowY = 'auto')
     }, []);
     return (
-        <div className="ws-container flex w-full flex-1">
-            <Builder buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} toggleModal={toggleModal} changeModal={changeModal}  />
+        <>
+        <div className="ws-container">
             <Sidebar handleAdd={addBlocks} toggleModal={toggleModal} />
+            <Builder buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} toggleModal={toggleModal} changeModal={changeModal}  />
         </div>
+        </>
     );
 }
 

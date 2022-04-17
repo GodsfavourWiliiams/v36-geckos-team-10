@@ -11,15 +11,18 @@ const Builder = ({ buildingBlocks, setBuildingBlocks, changeModal }) => {
         dragAndDrop(dragParent, changeModal);
     }, [buildingBlocks, changeModal]);
     return (
-        <main className="ws-builder h-full p-8 overflow-y-auto" ref={dragParent}>
-            {buildingBlocks.map((block, index) => <BuilderComponent 
-                                                    key={index} 
-                                                    tags={block}
-                                                    id={index}
-                                                    buildingBlocks={buildingBlocks}
-                                                    setBuildingBlocks={setBuildingBlocks}
-                                                    changeModal={changeModal}
-                                                   />)}
+        
+        <main className="ws-builder h-full md:p-10 px-4 pt-10 overflow-y-auto" ref={dragParent}>
+
+            {buildingBlocks.map((block, index) => 
+                <BuilderComponent 
+                    key={index} 
+                    tags={block}
+                    id={index}
+                    buildingBlocks={buildingBlocks}
+                    setBuildingBlocks={setBuildingBlocks}
+                    changeModal={changeModal}
+                    />)}
         </main>
     );
 }

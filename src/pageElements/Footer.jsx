@@ -7,7 +7,7 @@ import{FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa'
 function Footer() {
     return (
     
-  <footer>
+    <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 bg--900">
 
         {/* Top area: Blocks */}
@@ -105,7 +105,7 @@ function Footer() {
           {/* Social links */}
           <ul className="text-2xl flex justify-center items-center ga-4 mb-4 md:order-1 md:ml-4 md:mb-0">
             <li>
-              <a href='https://github.com/chingu-voyages/v36-geckos-team-10' target='_blank' className="text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" aria-label="Twitter">
+              <a href='https://github.com/chingu-voyages/v36-geckos-team-10' target='_blank'  rel='noreferrer' className="text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" aria-label="Twitter">
              <FaGithub/>
               </a>
             </li>
@@ -127,7 +127,7 @@ function Footer() {
         </div>
 
       </div>
-</footer>
+    </footer>
     )
 }
 

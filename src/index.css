@@ -21,6 +21,7 @@ body,
     flex-direction: column;
 }
 
+
 /*** 
 =================
 WORKSPACE STYLING
@@ -28,26 +29,28 @@ WORKSPACE STYLING
 ***/
 
 .ws-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     position: relative;
-    background-color:#F5F5F5;
+    background-color: #f0f2f8;
+    height: 100%;
 }
 
-.ws-container .ws-builder {
-    padding: 30px 0;
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 30px;
+.ws-builder {
+    position: relative;
+    margin-left: 290px;
+    height: 100%;
+}
+
+@media screen and (max-width: 767.9px) {
+    .ws-builder {
+        position: relative;
+        margin-left: 0px;
+        height: calc(100vh - 70px);
+    }
 }
 
 .ws-container .ws-builder .template {
-    width: 80%;
     display: flex;
+    margin-bottom: 30px;
     gap: 30px;
 }
 
@@ -66,14 +69,16 @@ WORKSPACE STYLING
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    gap: 20px;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    width: 290px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
 }
 
-
 .dropdown-wrapper .dropdown-list {
-    -webkit-box-shadow: inset rgba(0, 0, 0, 0.21) 0px 4px 8px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     opacity: 0;
     display: none;
     transition: all .5s ease-out;
@@ -83,161 +88,32 @@ WORKSPACE STYLING
 }
 
 .dropdown-wrapper .dropdown-toggle {
-    display: block ;
-    height: fit-content ;
-    opacity: 1 ;
-}
-
-
-.dropdown-wrapper .dropdown-list li {
-    font-size: 16px;
-  
-}
-
-.dropdown-wrapper .dropdown-list li:hover {
-    cursor: pointer;
-    font-weight: bold;}
-
-
-/***
-=====
-MODAL
-=====
-***/
-
-#modal-background {
-    transform: translateY(-20vh);
-    z-index: 1000;
-    position: absolute;
-    min-width: 100vw;
-    min-height: 120vh;
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
-#export-modal {
-    border-radius: 5px;
-    z-index: 1001;
+    display: block;
     height: fit-content;
-    min-width: 1000px;
-    width: fit-content;
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    top: 40%;
-    left: 50%;
-    background-color: #666;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    opacity: 1;
 }
 
-#export-modal .modal-closer {
-    align-self: flex-end;
-    cursor: pointer;
-    font-size: 2em;
-}
-
-#export-modal .code-field {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
-#export-modal .export-code {
-    height: 650px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    overflow-y: auto;
-}
-
-#export-modal .export-code code {
-    background-color: whitesmoke;
-    padding: 20px;
-    width: 90%;
-    flex: 1;
-    color: #333;
-    max-width: 600px;
-    overflow: auto;
-}
-
-
-/***
-=========
-UNIVERSAL
-=========
-***/
-
-.hidden {
-    opacity: 0;
-    transition: .5s;
+.mScroll::-webkit-scrollbar {
     display: none;
 }
 
-/*TEST*/
-
-#theme-toggle {
-    transform: scale(.7);
-    position: relative;
-    width: 100px;
-    height: 50px;
-    border-radius: 80px;
-    background-color: #222;
-    cursor: pointer;
-    box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 4px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+.template::-webkit-scrollbar {
+    display: none;
 }
 
-#theme-toggle .indicator {
-    color: white;
-    position: absolute;
-    top: 2.5px;
-    left: 2px;
-    width: 45px;
-    height: 45px;
-    font-size: 1.5em;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(to bottom, #444, #222);
-    border-radius: 50%;
-    transform: scale(0.9);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 2px 2px rgba(255, 255, 255, 0.2), inset 0 -2px 2px rgba(255, 255, 255, 0.2);
-    transition: left 0.5s;
+.passwordToggle {
+    float: right;
+    margin-right: 20px;
+    margin-top: -58px;
+    z-index: 999;
 }
 
-#theme-toggle.white .indicator {
-    left: 50px;
-    color: black;
-    transition: 0.5s;
-    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), inset 0 2px 2px rgba(255, 255, 255, 1), inset 0 -2px 2px rgba(255, 255, 255, 1);
+.passwordToggleOut {
+    float: right;
+    margin-right: 20px;
+    margin-top: -35px;
+    z-index: 999;
 }
 
-#theme-toggle.white {
-    background: #fff;
-    box-shadow: inset 0 1px 30px rgba(0, 0, 0, 0.1), inset 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 -1px 4px rgba(0, 0, 0, 0.1);
-}
 
-.btn {
-    padding: .8em 2em;
-    text-transform: uppercase;
-    border-radius: 10px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    background: #F0F0F3;
-    border: none;
-    transition: .3s;
-    font-weight: 600;
-    border: 2px solid #ddd;
-    color: #333;
-}
-
-.btn.pressed {
-    /* box-shadow: inset -10px -10px 10px #FFFFFF70, inset 10px 10px 10px #AEAEC020; */
-}
-
-span {
-    pointer-events: none;
-}
+/* SCROLL BAR */

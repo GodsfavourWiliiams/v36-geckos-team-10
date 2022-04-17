@@ -1,6 +1,6 @@
-export const BtnStyled = ({ innerText, clickFunc }) => {
+export const BtnStyled = ({ customStyle, innerText, clickFunc }) => {
         return (
-        <button className="" onClick={() => clickFunc()}>
+        <button className={ `${customStyle}`} onClick={() => clickFunc()}>
             {innerText}
         </button>
     );

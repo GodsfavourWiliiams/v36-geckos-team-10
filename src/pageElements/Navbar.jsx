@@ -1,50 +1,50 @@
-import { useRef, useState } from 'react';
-import { BsFillMoonStarsFill, BsCloudSun } from 'react-icons/bs'
+import { useState } from 'react';
 import logoAlt from '../assets/logoAlt.jpg'
 import { Link, useLocation } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
 import { landingPageObject } from '../features/landingPageObject';
 
 export const Navbar = () => {
-    const [themeIcon, setThemeIcon] = useState(<BsFillMoonStarsFill />);
-    const indicator = useRef(null)
-    const toggleTheme = () => {
-        indicator.current.classList.toggle('white')
-        setThemeIcon(indicator.current.classList.contains('white') ? <BsCloudSun/> : <BsFillMoonStarsFill />)
-    }
-    const [isOpen, setIsOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
     const navLinks = Object.keys(landingPageObject);
+
     return (
-<header className=" top-0 h-auto bg-white w-full md:bg-opacity-90 transition duration-300 ease-in-out">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Site branding */}
-          <div className="flex-shrink-0 mr-4">
-            {/* Logo */}
-            <Link to="/" className="block" aria-label="Cruip">
-            <img className='h-16 w-auto' src={logoAlt} alt=""/>
-            </Link>
+      <>
+      <nav className="flex items-center justify-between py-3">
+        <div className="w-full max-w-7xl mx-auto flex flex-wrap items-center justify-between md:px-0 px-3">
+          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start transition-all">
+               <Link to="/" className="">
+                  <img className='h-12 w-auto' src={logoAlt} alt=""/>
+                  </Link>
+            <button
+              className="cursor-pointer text-xl leading-none border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              type="button"
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              <FaBars/>
+            </button>
           </div>
-          {/* Site navigation */}
-          <nav className="flex  flex-grow">
-            <ul className="flex flex-grow justify-end flex-wrap items-center">
-              {useLocation().pathname === '/' && navLinks.map(link => {
-                return (
-                 <li key={link} 
-                 className="uppercase cursor-pointer font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                <a href={'#' + link }> {link} </a>
-                </li>
-                )
-              })}              
+          <div
+            className={
+              "lg:flex mt-4 md:mt-0 transition-all" +
+              (navbarOpen ? " flex" : " hidden")
+            }>
+            <ul className="flex flex-col lg:flex-row list-none">
+                    {useLocation().pathname === '/' && navLinks.map(link => {
+                      return (
+                      <li key={link} 
+                      className="nav-item">
+                      <span className="md:px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug hover:opacity-75">
+                         <span className="md:ml-2">{link}</span>
+                      </span>
+                      </li>
+                      )
+                    })}              
             </ul>
-          </nav>
-          <div id='theme-toggle' ref={indicator} onClick={() => toggleTheme()}>
-                    <i className='indicator'>{themeIcon}</i>
-                </div>
-                <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
-      </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </nav>
+          </>
     )
 }
 
