@@ -12,7 +12,7 @@ const Builder = ({ buildingBlocks, setBuildingBlocks, changeModal }) => {
     }, [buildingBlocks, changeModal]);
     return (
         
-        <main className="ws-builder h-full md:p-10 px-4 pt-10 overflow-y-auto" ref={dragParent}>
+        <main className="ws-builder h-full md:p-10 px-3 pt-10 overflow-y-auto" ref={dragParent}>
 
             {buildingBlocks.map((block, index) => 
                 <BuilderComponent 

@@ -1,49 +1,47 @@
 import { useState } from 'react';
 import logoAlt from '../assets/logoAlt.jpg'
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
-import { landingPageObject } from '../features/landingPageObject';
+import { ReactComponent as Profile } from '../assets/User_circle.svg';
 
 export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-    const navLinks = Object.keys(landingPageObject);
 
     return (
       <>
-      <nav className="flex items-center justify-between py-3">
-        <div className="w-full max-w-7xl mx-auto flex flex-wrap items-center justify-between md:px-0 px-3">
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start transition-all">
+      <nav className="flex items-center justify-between py-3 md:px-8">
+        <div className="w-full max-w-7xl mx-auto flex items justify-between md:px-0 px-3">
+          <div className="w-full relative flex justify-between transition-all">
                <Link to="/" className="">
                   <img className='h-12 w-auto' src={logoAlt} alt=""/>
                   </Link>
-            <button
-              className="cursor-pointer text-xl leading-none border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <FaBars/>
-            </button>
           </div>
-          <div
-            className={
-              "lg:flex mt-4 md:mt-0 transition-all" +
-              (navbarOpen ? " flex" : " hidden")
-            }>
-            <ul className="flex flex-col lg:flex-row list-none">
-                    {useLocation().pathname === '/' && navLinks.map(link => {
-                      return (
-                      <li key={link} 
-                      className="nav-item">
-                      <span className="md:px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug hover:opacity-75">
-                         <span className="md:ml-2">{link}</span>
-                      </span>
-                      </li>
-                      )
-                    })}              
-            </ul>
+          <div  className="flex">
+              <div className="cursor-pointer" onClick={() => setNavbarOpen(!navbarOpen)}>
+                <Profile className="rounded-full" />
+              </div>
+                    {useLocation().pathname === '/' ?
+                     <div className={"absolute right-4 z-50 w-40 mt-14 text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : " hidden")}>
+                         <Link to='/signin' className="py-1">
+                              <span className="block py-3 px-4 text-sm hover:text-white hover:bg-indigo-500 ">Sign In</span>
+                          </Link> 
+                      </div> 
+                  :
+                  <div className={"absolute right-4 z-50  mt-14 text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : " hidden")}>
+                  <div className="py-3 px-4">
+                    <span className="block text-sm text-gray-900 ">Williams Godsfavour</span>
+                    <span className="block text-sm font-medium text-gray-500 truncate ">name@flowbite.com</span>
+                  </div>
+                      <ul className="">
+                          <Link to='/signin'>
+                            <span className="block py-3 px-4 text-sm hover:text-white rounded hover:bg-indigo-500 ">Sign Out</span>
+                          </Link>
+                        </ul> 
+                    </div> 
+                  }            
           </div>
         </div>
       </nav>
+      
           </>
     )
 }

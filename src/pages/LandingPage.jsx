@@ -7,7 +7,9 @@ import Showcase from '../pageElements/landingPage/Showcase';
 import ScrollToTop from '../pageElements/landingPage/ScrollToTop';
 import Banner from '../pageElements/Banner';
 import Navbar from '../pageElements/Navbar';
+import CTA from '../pageElements/landingPage/CTA';
 import Faq from '../pageElements/landingPage/Faq';
+import Contact from '../pageElements/landingPage/Contact';
 
 function LandingPage() {
     return (
@@ -19,6 +21,8 @@ function LandingPage() {
             <Newsletter/>
             <Showcase/>
             <Faq/>
+            <Contact/>
+            <CTA/>
             <Footer/>   
             <ScrollToTop/>         
         </div>

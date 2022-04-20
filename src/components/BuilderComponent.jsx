@@ -16,15 +16,18 @@ const innerDivs = () => {
     let divNum = Number(String(tags).match(/\d$/));
     let myJsx = [];
     do {
-        myJsx.push(<div key={Math.random()} className={itemClasses}>{builderObject[tags] || 'notags'}{(divNum === 1 || divNum === 0) && <button className="cursor-pointer absolute right-3 top-3 rounded-r-md" onClick={removeBlock}>
-            <FaTrash className="text-blue-500 text-base hover:text-red-500"/></button>}</div>);
+        myJsx.push(
+        <div key={Math.random()} className={itemClasses}>{builderObject[tags] || 'notags'}{(divNum === 1 || divNum === 0) && 
+            <button className="cursor-pointer absolute right-3 top-3 rounded-r-md" onClick={removeBlock}>
+                <FaTrash className="text-blue-500 text-base hover:text-red-500"/>
+            </button>}
+        </div>);
         divNum--;
     } while(0 < divNum);
     return myJsx;
     }
 return (
-    
-    <div key={id} className="template overflow-x-auto cursor-move" data-tag={tags} draggable='true'>
+    <div key={id} className="template overflow-auto cursor-move" data-tag={tags} draggable='true'>
         {innerDivs()}
     </div>
     );

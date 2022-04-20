@@ -1,7 +1,8 @@
 import { Fragment } from "react";
-import { FaTimes, FaCopy } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { transformCss, transformHtml } from "../features/exportFunctionality";
 import { Dialog, Transition } from '@headlessui/react';
+import { ReactComponent as DockFIll } from "../assets/dockfill.svg";
 
 export const ExportModal= ({ changeModal, modalContent }) => {
 
@@ -16,12 +17,14 @@ export const ExportModal= ({ changeModal, modalContent }) => {
 ${transformHtml(modalContent).join("\n")}
 </body>`;
 let cssCode = `
-body {
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 ${transformCss(modalContent).join('\n')}
 `;
@@ -55,7 +58,7 @@ ${transformCss(modalContent).join('\n')}
              leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
            >
              <div className="flex text-base text-left transform transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle lg:max-w-4xl">
-               <div className="w-full relative flex items-center rounded-md bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-10">
+               <div className="w-full relative flex items-center rounded-md bg-white px-4 pt-14 pb-8 overflow-auto shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-10">
                  <button
                    type="button"
                    className="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-4 lg:right-4 focus:outline-none"
@@ -65,33 +68,32 @@ ${transformCss(modalContent).join('\n')}
                  </button>
  
                  <div className="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
-                   <div className="aspect-w-2 rounded-lg bg-gray-100 overflow-x-auto sm:col-span-6 lg:col-span-6 p-3 mScroll">
-                   
-                  <div className="flex items-center justify-between">
-                   <h2 className="text-2xl font-extrabold text-gray-900 sm:pr-12">HTML</h2>
-                   <button className="flex py-2 px-3 rounded focus:outline-none border-2 shadow border-white"  
-                   onClick={() => {
-                   navigator.clipboard.writeText( htmlCode );
-                   alert("Copied")
-                   }}>
-                        <FaCopy className="mr-2 h-6 w-6"/> Copy
-                    </button>
-                  </div>
+                   <div className="aspect-w-2 rounded-lg bg-gray-100 overflow-auto h-full max-h-96 sm:col-span-6 lg:col-span-6 p-3 mScroll">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-2xl font-extrabold text-gray-900 sm:pr-12">HTML</h2>
+                        <button className="z-50 bg-gray-100 flex rounded focus:outline-none border-2 shadow border-black"  
+                        onClick={() => {
+                        navigator.clipboard.writeText( htmlCode );
+                        alert("Copied")
+                        }}>
+                              <DockFIll/>
+                          </button>
+                      </div>
                       <code>
                         <pre>                
                           {htmlCode}                
                         </pre>
                       </code>
                    </div>
-                   <div className="sm:col-span-6 lg:col-span-6 overflow-auto  bg-orange-100 rounded-lg p-3">
+                   <div className="sm:col-span-6 lg:col-span-6 overflow-auto h-full max-h-96 mScroll bg-orange-100 rounded-lg p-3">
                       <div className="flex items-center justify-between">
                         <h2 className="text-2xl font-extrabold text-gray-900 sm:pr-12">CSS</h2>
-                          <button className="flex py-2 px-3 rounded focus:outline-none border-2 shadow border-white"  
+                          <button className="flex rounded focus:outline-none border-2 shadow border-black"  
                           onClick={() => {
                           navigator.clipboard.writeText( cssCode )
                           alert("Copied")
                           }}>
-                            <FaCopy className="mr-2 h-6 w-6"/> Copy
+                            <DockFIll />
                           </button>
                       </div>
                         <code>

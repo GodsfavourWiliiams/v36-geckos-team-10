@@ -1,0 +1,119 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html,
+    body,
+    #root {
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+    }
+    
+    #root {
+        display: flex;
+        flex-direction: column;
+    }
+    /*** 
+=================
+WORKSPACE STYLING
+=================
+***/
+    
+    .ws-container {
+        position: relative;
+        background-color: #f0f2f8;
+        height: 100%;
+    }
+    
+    .ws-builder {
+        position: relative;
+        margin-left: 290px;
+        height: 100%;
+    }
+    
+    @media screen and (max-width: 767.9px) {
+        .ws-builder {
+            position: relative;
+            margin-left: 0px;
+            height: calc(100vh - 70px);
+        }
+    }
+    
+    .ws-container .ws-builder .template {
+        display: flex;
+        margin-bottom: 30px;
+        gap: 30px;
+    }
+    
+    .ws-container .ws-builder .template.dragging {
+        opacity: 4;
+    }
+    /***
+=============
+    SIDEBAR
+=============
+***/
+    
+    .ws-container .ws-sidebar {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        width: 290px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+    
+    .dropdown-wrapper .dropdown-list {
+        opacity: 0;
+        display: none;
+        transition: all .5s ease-out;
+        width: 100%;
+        list-style: none;
+        text-transform: uppercase;
+    }
+    
+    .dropdown-wrapper .dropdown-toggle {
+        display: block;
+        height: fit-content;
+        opacity: 1;
+    }
+    
+    .mScroll::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .template::-webkit-scrollbar {
+        display: none;
+    }
+    
+     ::-webkit-scrollbar {
+        width: 0.5rem;
+        background-color: #F0F2F8;
+        border-radius: 0.4rem;
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        background-color: #C1C1C1;
+        border-radius: 0.4rem;
+    }
+    
+    .passwordToggle {
+        float: right;
+        margin-right: 20px;
+        margin-top: -58px;
+        z-index: 999;
+    }
+    
+    .passwordToggleOut {
+        float: right;
+        margin-right: 20px;
+        margin-top: -35px;
+        z-index: 999;
+    }

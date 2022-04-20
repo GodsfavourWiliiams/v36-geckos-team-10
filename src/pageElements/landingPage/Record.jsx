@@ -7,15 +7,15 @@ function Record() {
   const steps = [
     {
       heading: "Register",
-      description: "Create an account with us using Google or Facebook."
+      description: "Create an account with us using Google."
     },
     {
-      heading: "Download",
-      description: "Browse and Download the template that you like from the marketplace."
+      heading: "Export/ Copy Code",
+      description: "Selct and Copy the template that you like from the WorkSpace."
     },
     {
       heading: "Run",
-      description: "Follow the instructions to setup and customize the template to your needs."
+      description: "Follow the instructions and customize the template to your needs."
     }
   ];
 

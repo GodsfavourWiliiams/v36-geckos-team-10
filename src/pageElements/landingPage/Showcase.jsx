@@ -22,7 +22,7 @@ const Showcase = () => {
       
       //   {content.showcase.map((item, index) => 
       //   <ShowcaseComponent key={index} heading={item.title} content={item.content} image={item.banner} icon={item.icon} num={index}/>)}
-      <div className="relative px-3  md:px-10">
+      <div className="relative px-3 md:px-10">
         <div className="flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24">
             <div className="md:w-5/12 flex-shrink-0 h-80 md:h-auto relative">
               <img src={StatsIllustration} alt="" className='w-full h-full' />
@@ -34,7 +34,7 @@ const Showcase = () => {
                 <h2 className='mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight'>
                    We have been doing this 
                    <br /> 
-                   since <span className="text-indigo-600">1999.</span>
+                   since <span className="text-indigo-600">2020.</span>
                 </h2>
                 <p className=" mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

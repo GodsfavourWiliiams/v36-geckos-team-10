@@ -1,37 +1,48 @@
+import { exportData } from "./exportData";
+
 export const transformHtml = (blocks) => {
     return blocks.map(block => {
-        switch(block) {
+        switch (block) {
             case "nav":
-            return '<nav class="navBar">Nav</nav>';
-            break;
+                return '<nav class="navBar">Nav</nav>';
+                break;
             case "div":
-            return '<div class="divBar">Div</div>';
-            break;
+                return '<div class="divBar">Div</div>';
+                break;
             case "div2":
-            return '<div class="div2">\n\t<div class="div2--div">Div</div>\n\t<div class="div2--div">Div</div>\n</div>';
-            break;
+                return '<div class="div2">\n\t<div class="div2--div">Div</div>\n\t<div class="div2--div">Div</div>\n</div>';
+                break;
             case "div3":
-            return '<div class="div3">\n\t<div class="div3--div">Div</div>\n\t<div class="div3--div">Div</div>\n\t<div class="div3--div">Div</div>\n</div>';
-            break;
+                return '<div class="div3">\n\t<div class="div3--div">Div</div>\n\t<div class="div3--div">Div</div>\n\t<div class="div3--div">Div</div>\n</div>';
+                break;
             case "footer":
-            return '<footer class="footerBar">footer</footer>';
-            break;
+                return '<footer class="footerBar">footer</footer>';
+                break;
             case "img":
-            return '<img class="page--img" src="/* img url */" alt="/* img description */">';
-            break;
+                return '<img class="page--img" src="/* img url */" alt="/* img description */">';
+                break;
             case "table":
-            return '<table class="/* your table */">Table</table>';
-            break;
-            case "header":
-            return '<header class="header">Header</header>';
-            break;
-            case "article":
-            return '<article class="article">Article</article>';
-            break;
+                return exportData.table;
+                break;
+            case "sidenav":
+                return exportData.sidenav;
+                break;
+            case "hero2":
+                return exportData.hero;
+                break;
+            case "form":
+                return exportData.form
+                break;
+            case "blog":
+                return exportData.blog;
+                break;
             default:
-            return 'ERROR';
+                return 'ERROR';
         }
-    })}
+    })
+}
+
+
 export const transformCss = (blocks) => {
     const divCss = `.divBar {
     margin-top: 50px;
@@ -79,7 +90,7 @@ export const transformCss = (blocks) => {
     width: 30%;
 }`
 
-const div2BarCss = `.div2 {
+    const div2BarCss = `.div2 {
     margin-top: 50px;
     width: 100%;
     height: 100px;
@@ -104,7 +115,7 @@ const div2BarCss = `.div2 {
     margin-left: 20px;
 }`
 
-const footerBarCss = `.footerBar {
+    const footerBarCss = `.footerBar {
     margin-top: 50px;
     width: 100%;
     height: 100px;
@@ -114,7 +125,7 @@ const footerBarCss = `.footerBar {
     background: lightblue;
 }`
 
-const imgCss = `.page--img {
+    const imgCss = `.page--img {
     margin-top: 50px;
     width: 100%;
     max-width: 800px;
@@ -123,7 +134,8 @@ const imgCss = `.page--img {
     border-radius: 8px;
 }`
 
-const articleCss = `.article {
+
+    const headerCss = `.header {
     margin-top: 50px;
     max-width: 1220px;
     width: 100%;
@@ -135,49 +147,48 @@ const articleCss = `.article {
     border-radius: 8px;
 }`
 
-const headerCss = `.header {
-    margin-top: 50px;
-    max-width: 1220px;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: lightblue;
-    border-radius: 8px;
-}` 
 
     return blocks.map((block, index) => {
-        if(blocks.indexOf(block) !== index) return;
-        switch(block) {
+        if (blocks.indexOf(block) !== index) return block;
+        switch (block) {
             case "nav":
-            return navBarCss;
-            break;
+                return navBarCss;
+                break;
             case "div":
-            return divCss;
-            break;
+                return divCss;
+                break;
             case "div2":
-            return div2BarCss;
-            break;
+                return div2BarCss;
+                break;
             case "div3":
-            return div3BarCss;
-            break;
+                return div3BarCss;
+                break;
             case "footer":
-            return footerBarCss;
-            break;
+                return footerBarCss;
+                break;
             case "img":
-            return imgCss;
-            break;
+                return imgCss;
+                break;
             case "table":
-            return 'table /*add*/';
-            break;
+                return exportData.tableCss;
+                break;
             case "header":
-            return headerCss;
-            break;
-            case "article":
-            return articleCss;
-            break;
+                return headerCss;
+                break;
+            case "sidenav":
+                return exportData.sidenavCss;
+                break;
+            case "hero2":
+                return exportData.heroCss;
+                break;
+            case "form":
+                return exportData.formCss;
+                break;
+            case "blog":
+                return exportData.blogCss;
+                break;
             default:
-            return 'ERROR';
-    }});
+                return 'ERROR';
+        }
+    });
 }
