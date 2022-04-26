@@ -1,4 +1,4 @@
-import { IoDocumentTextSharp, IoImageSharp, IoImagesSharp, IoAppsSharp, IoMenu, IoJournalSharp, IoAccessibility, IoFileTrayFull, IoNewspaper } from "react-icons/io5";
+import { IoDocumentTextSharp, IoImageSharp, IoImagesSharp, IoAppsSharp, IoMenu, IoJournalSharp, IoAccessibility, IoFileTrayFull, IoNewspaper, IoImages, IoFilter, IoCart } from "react-icons/io5";
 
 export const builderObject = {
     div: ['Div', <IoDocumentTextSharp key={Math.random()} className='text-4xl'/>],
@@ -13,4 +13,8 @@ export const builderObject = {
     hero2: ['Hero', <IoAccessibility key={Math.random()} className='text-4xl'/>],
     form: ['Form', <IoFileTrayFull key={Math.random()} className='text-4xl'/>],
     blog: ['Blog', <IoNewspaper key={Math.random()} className='text-4xl'/>],
+    imageGallery: ['ImageGallery', <IoImages key={Math.random()} className='text-4xl'/>],
+    breadCrumb: ['BreadCrumb', <IoFilter key={Math.random()} className='text-4xl'/>],
+    checkOutForm: ['CheckOutForm', <IoCart key={Math.random()} className="text-4xl"/>]
 }
+

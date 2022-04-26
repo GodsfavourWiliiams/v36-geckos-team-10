@@ -9,12 +9,17 @@ export const ExportModal= ({ changeModal, modalContent }) => {
     const handleClose = () => changeModal[1](!changeModal[0]);
     let htmlCode = `
 <!DOCTYPE html>
-<head>
-<link rel="stylesheet" href="FILENAME.css">
-<title>Lorem ipsum</title>
-</head>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="" sizes="32x32" href="/" />
+  <link rel="stylesheet" href="your stylesheet file name">
+  <title>Your Title</title>
+  </head>
 <body>
-${transformHtml(modalContent).join("\n")}
+    ${transformHtml(modalContent).join("\n")}
 </body>`;
 let cssCode = `
 :root {

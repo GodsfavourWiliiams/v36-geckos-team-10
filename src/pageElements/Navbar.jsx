@@ -20,13 +20,13 @@ export const Navbar = () => {
                 <Profile className="rounded-full" />
               </div>
                     {useLocation().pathname === '/' ?
-                     <div className={"absolute right-4 z-50 w-40 mt-14 text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : " hidden")}>
+                     <div className={"absolute right-4 transition-all duration-300  z-50 w-40 mt-14 text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : " hidden")}>
                          <Link to='/signin' className="py-1">
                               <span className="block py-3 px-4 text-sm hover:text-white hover:bg-indigo-500 ">Sign In</span>
                           </Link> 
                       </div> 
                   :
-                  <div className={"absolute right-4 z-50  mt-14 text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : " hidden")}>
+                  <div className={"absolute right-4 z-50 transition-all duration-300 mt-14 text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : " hidden")}>
                   <div className="py-3 px-4">
                     <span className="block text-sm text-gray-900 ">Williams Godsfavour</span>
                     <span className="block text-sm font-medium text-gray-500 truncate ">name@flowbite.com</span>

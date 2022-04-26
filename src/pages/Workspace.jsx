@@ -2,40 +2,42 @@ import { useEffect, useState } from "react";
 import Builder from "../pageElements/workspace/Builder";
 import Sidebar from "../pageElements/workspace/Sidebar";
 import Loader from '../pageElements/loader/loader';
+import ExportModal from "../pageElements/ExportModal";
 
-const Workspace = ({ toggleModal, buildingBlocks, setBuildingBlocks, changeModal }) => {
+const Workspace = () => {
+    // Loading state 
+    const [isLoading, setIsLoading] = useState(true);
+    const [buildingBlocks, setBuildingBlocks] = useState(['nav', 'hero2', 'div2', 'table', 'footer']);
+    const [modalState, setModalState] = useState(false);
+    const [modalContent, setModalContent] = useState([...buildingBlocks]);
+
     const addBlocks = (tag, e) => {
         setBuildingBlocks([...buildingBlocks, tag]);
-        changeModal([...buildingBlocks, tag]);
+        setModalContent([...buildingBlocks, tag]);
         // Component added message
         e.target.lastChild.classList.remove('hidden');
         setTimeout(() => {
         e.target.lastChild.classList.add('hidden')
         }, 1500)
+        
     }
-    useEffect(()=>{
-        let bodyEl = document.querySelector('body');
-        bodyEl.style.overflowY = 'hidden'
-        return (bodyEl.style.overflowY = 'auto')
-    }, []);
-       // Loading state 
-   const [isLoading, setIsLoading] = useState(true);
-   
+
     useEffect(() => {
-        // Wait for 7 seconds
+        // Wait for some seconds
         setTimeout(() => {
           setIsLoading(false);
-        }, 7000);
+        }, 9000);
       }, []);
-
-    return isLoading ?
-        <Loader/> :
-        <>
+    
+    return  isLoading ?
+    <Loader className=""/> :
+    <>
         <div className="ws-container">
-            <Sidebar handleAdd={addBlocks} toggleModal={toggleModal} />
-            <Builder buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} toggleModal={toggleModal} changeModal={changeModal}  />
+            <ExportModal changeModal={[modalState, setModalState]} modalContent={modalContent} />
+            <Sidebar handleAdd={addBlocks} toggleModal={[modalState, setModalState]} />
+            <Builder buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} toggleModal={[modalState, setModalState]} changeModal={setModalContent} />
         </div>
-        </>
+    </>
 }
 
 export default Workspace;

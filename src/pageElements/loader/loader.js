@@ -37,85 +37,85 @@ const Loader = () => {
           <div className="inline-block align-middle max-w-4xl">
              
               <div className="wrapper1">
-         <div class="wrapper2">
-            <div class="box">
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
+         <div className="wrapper2">
+            <div className="box">
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
             </div>
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
             </div>
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
-            </div>
-            
-        </div>
-        <div class="box">
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
-            </div>
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
-            </div>
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
             </div>
             
         </div>
-        <div class="box">
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
+        <div className="box">
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
             </div>
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
             </div>
-            <div class="cube">
-                <div class="wall front"></div>
-                <div class="wall back"></div>
-                <div class="wall left1"></div>
-                <div class="wall right1"></div>
-                <div class="wall top1"></div>
-                <div class="wall bottom1"></div>
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
+            </div>
+            
+        </div>
+        <div className="box">
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
+            </div>
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
+            </div>
+            <div className="cube">
+                <div className="wall front"></div>
+                <div className="wall back"></div>
+                <div className="wall left1"></div>
+                <div className="wall right1"></div>
+                <div className="wall top1"></div>
+                <div className="wall bottom1"></div>
             </div>
             
         </div>

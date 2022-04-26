@@ -10,8 +10,8 @@ import { ReactComponent as SignOut } from '../../assets/Sign_out_squre.svg';
 const Sidebar = ({ handleAdd, toggleModal }) => {
     //Different types of tags can be added bellow and they will show up in the dropdown menu, if the tag has 2 or 3 at the end, it will create 2 or 3 elements.
     const commonTags = ['div', 'div2', 'div3', 'img', 'img2', 'table'];
-    const semanticTags = ['nav', 'hero2', 'form', 'footer'];
-    const WebTemplate = ['blog', 'sidenav'];
+    const semanticTags = ['nav','breadCrumb', 'hero2', 'form', 'footer'];
+    const WebTemplate = ['blog', 'sidenav', 'imageGallery','checkOutForm', ];
     const dropDownStyle = 'p-16';
     const [collapseShow, setCollapseShow] = useState(false);
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -63,7 +63,7 @@ const Sidebar = ({ handleAdd, toggleModal }) => {
           {/* Collapse */}
           <div
             className={
-              ` md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute h-screen left-0 w-full bg-white top-0 z-50 overflow-y-auto overflow-x-hidden items-center md:px-0 px-2 flex-1 rounded ${collapseShow ? 'block' : 'hidden'}`
+              ` md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute h-screen left-0 w-full bg-white top-0 z-50 overflow-y-auto items-center md:px-0 px-2 flex-1 rounded ${collapseShow ? 'block' : 'hidden'}`
             }
           >
             {/* Collapse header */}
@@ -93,10 +93,9 @@ const Sidebar = ({ handleAdd, toggleModal }) => {
                 <Dropdown className={dropDownStyle} items={commonTags} handleAdd={ handleAdd } title='Common Tags' />
                 <Dropdown className={dropDownStyle} items={ semanticTags } handleAdd={ handleAdd } title='Semantic Elements' />
                 <Dropdown className={dropDownStyle} items={ WebTemplate } handleAdd={ handleAdd } title='Templates' />
-                <div className="flex justify-center items-center ">
-                  <BtnStyled customStyle={`bg-indigo-600 fixed bottom-4 border border-transparent rounded-lg py-3 px-8  text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-50 w-11/12  md:w-64`
-                      } clickFunc={() => {toggleModal[1](!toggleModal[0])}} innerText='Export' />
-                    
+                <div className="hidden md:flex justify-center items-center ">
+                  <BtnStyled customStyle={`bg-indigo-600 fixed bottom-4 border border-transparent rounded-lg py-3 px-8  text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-50 w-11/12  md:w-64` } 
+                  clickFunc={() => {toggleModal[1](!toggleModal[0])}} innerText='Export' />
                 </div>
             </div>
           </div>

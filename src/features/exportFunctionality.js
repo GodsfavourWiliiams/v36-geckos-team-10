@@ -36,6 +36,15 @@ export const transformHtml = (blocks) => {
             case "blog":
                 return exportData.blog;
                 break;
+            case "imageGallery":
+                return exportData.imageGallery;
+                break;
+            case "breadCrumb":
+                return exportData.breadcrumb;
+                break;
+            case "checkOutForm":
+                return exportData.checkOutForm;
+                break;
             default:
                 return 'ERROR';
         }
@@ -186,6 +195,15 @@ export const transformCss = (blocks) => {
                 break;
             case "blog":
                 return exportData.blogCss;
+                break;
+            case "imageGallery":
+                return exportData.imageGalleryCss;
+                break;
+            case "breadCrumb":
+                return exportData.breadcrumbCss;
+                break;
+            case "checkOutForm":
+                return exportData.checkOutFormCss;
                 break;
             default:
                 return 'ERROR';

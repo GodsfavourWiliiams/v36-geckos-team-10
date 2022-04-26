@@ -35,15 +35,15 @@ const Faq = () => {
   return (
     <div className='relative'>
         <div className='max-w-screen-xl mx-auto py-16 lg:py-20 px-3 md:px-10'>
-            <div className='flex'>
+            <div className='flex items-center justify-center'>
                 <div className="hidden lg:block w-5/12 flex-shrink-0">
                     <img src={customerIllustration} alt="" />
                 </div>
-                <div className="lg:ml-12">
+                <div className=" lg:ml-12">
                     <p className="text-indigo-600 font-bold mb-4 text-center lg:text-left">
                         FAQs
                     </p>
-                    <h2 className='mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight'>
+                    <h2 className='mt-4 font-black text-center lg:text-left text-3xl sm:text-4xl lg:text-5xl md:text-left leading-tight'>
                     Do you have <span className="text-indigo-600">Questions ?</span>
                     </h2>
                     <p className="max-w-xl text-center mx-auto lg:mx-0 lg:text-left lg:max-w-none leading-relaxed text-sm sm:text-base lg:text-lg font-medium mt-4 text-gray-500">

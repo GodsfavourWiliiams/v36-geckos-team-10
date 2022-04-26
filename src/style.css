@@ -46,6 +46,7 @@ WORKSPACE STYLING
         display: flex;
         margin-bottom: 30px;
         gap: 30px;
+        resize: horizontal;
     }
     
     .ws-container .ws-builder .template.dragging {
