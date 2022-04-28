@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
+// import { FaMarker} from "react-icons/fa"
 
 function Dropdown({items = [], handleAdd, title }) {
     const [ isdropdownToggle, setIsdropdownToggle ] = useState(false)
@@ -16,7 +17,8 @@ function Dropdown({items = [], handleAdd, title }) {
             <ul className={`mt-4 bg-white rounded-md shadow z-30 dropdown-list transition duration-900 ease-in-out 
              ${isdropdownToggle ? 'dropdown-toggle' : ''}`}>
                 {items.map((item, index) => (
-                    <li className="flex justify-between rounded px-3 py-3 text-sm capitalize text-gray-700 hover:bg-indigo-600 hover:text-white " key={index} onClick={(e) => handleAdd(item, e)}>{item}<span className="pointer-events-none hidden">component added</span></li>
+                    <li className="flex justify-between rounded px-3 py-3 text-sm capitalize text-gray-700 hover:bg-indigo-600 hover:text-white " key={index} onClick={(e) => handleAdd(item, e)}>{item} 
+                    </li>
                 ))}
             </ul>
         </div>

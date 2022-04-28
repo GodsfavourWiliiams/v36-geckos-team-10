@@ -3,6 +3,8 @@ import Builder from "../pageElements/workspace/Builder";
 import Sidebar from "../pageElements/workspace/Sidebar";
 import Loader from '../pageElements/loader/loader';
 import ExportModal from "../pageElements/ExportModal";
+import { toast } from "react-toastify";
+import { ReactComponent as NoData } from "../assets/no_data.svg";
 
 const Workspace = () => {
     // Loading state 
@@ -11,15 +13,11 @@ const Workspace = () => {
     const [modalState, setModalState] = useState(false);
     const [modalContent, setModalContent] = useState([...buildingBlocks]);
 
-    const addBlocks = (tag, e) => {
+    const addBlocks = (tag) => {
         setBuildingBlocks([...buildingBlocks, tag]);
         setModalContent([...buildingBlocks, tag]);
         // Component added message
-        e.target.lastChild.classList.remove('hidden');
-        setTimeout(() => {
-        e.target.lastChild.classList.add('hidden')
-        }, 1500)
-        
+        toast.success(tag + " Successfully Added")
     }
 
     useEffect(() => {
@@ -30,12 +28,18 @@ const Workspace = () => {
       }, []);
     
     return  isLoading ?
-    <Loader className=""/> :
+    <Loader /> :
     <>
         <div className="ws-container">
             <ExportModal changeModal={[modalState, setModalState]} modalContent={modalContent} />
             <Sidebar handleAdd={addBlocks} toggleModal={[modalState, setModalState]} />
+            {buildingBlocks.length === 0 ? 
+                    <div className="ws-builder min-h-screen flex items-center justify-center">
+                        <NoData className="-mt-24 w-auto px-8 " />123
+                    </div>
+                : 
             <Builder buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} toggleModal={[modalState, setModalState]} changeModal={setModalContent} />
+        }
         </div>
     </>
 }

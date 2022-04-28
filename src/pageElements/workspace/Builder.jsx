@@ -1,7 +1,6 @@
 import dragAndDrop from "../../features/dragAndDrop";
 import { useEffect, useRef } from "react";
 import BuilderComponent from "../../components/BuilderComponent";
-import { ReactComponent as NoData } from "../../assets/no_data.svg";
 import BtnStyled from "../../components/BtnStyled";
 
 // component that contains workspace builder area
@@ -16,14 +15,8 @@ const Builder = ({ buildingBlocks, setBuildingBlocks, changeModal, toggleModal }
     
     return (
         <>
-            <main className="ws-builder h-full overflow-y-auto" ref={dragParent}>
+            <main className="ws-builder h-full overflow-y-auto md:p-10 px-3 pt-10" ref={dragParent}>
                 {/* this code returns the NoDATA image if the building blocks or builder space is empty */}
-                {buildingBlocks.length === 0 ? 
-                    <div className="min-h-screen flex items-center justify-center">
-                        <NoData className="-mt-24 w-auto px-8 " />
-                    </div>
-                : 
-                <div className="md:p-10 px-3 pt-10">
                 {buildingBlocks.map((block, index) => 
                     <BuilderComponent 
                         key={index} 
@@ -33,8 +26,6 @@ const Builder = ({ buildingBlocks, setBuildingBlocks, changeModal, toggleModal }
                         setBuildingBlocks={setBuildingBlocks}
                         changeModal={changeModal}
                         />)}
-                </div>
-               }
             </main>
             <div className="md:hidden block">
                 {/* this toogles the export modal on mobile view */}

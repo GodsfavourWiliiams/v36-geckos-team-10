@@ -1,12 +1,15 @@
 // import { useEffect } from 'react';
 import {FaTrash} from 'react-icons/fa';
 import { builderObject } from '../features/builderObject';
+import { toast } from 'react-toastify';
+
 
 const BuilderComponent = ({tags , id, buildingBlocks, setBuildingBlocks, changeModal}) => {
 const removeBlock = () => {
     const newArr = buildingBlocks.filter((block, index) => index !== id);
     setBuildingBlocks(newArr)
     changeModal(newArr)
+    toast.warning(tags + " has been deleted")
 }
 
 //add custom styling for the inner divs in the builder

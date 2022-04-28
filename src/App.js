@@ -5,12 +5,19 @@ import TemplatePicker from "./pages/TemplatePicker";
 import SignUp from "./pages/Auth/SignUp";
 import SignIn from "./pages/Auth/SignIn";
 import Error from "./assets/Forbidden.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function App() {
+  toast.configure({
+    autoClose: 3000,
+    draggable: true
+});
   return (
     <BrowserRouter>
+    <ToastContainer/>
       <Routes>
       <Route path="/" element={<LandingPage />} />
         <Route path="/signin" element={ <SignIn/>} />

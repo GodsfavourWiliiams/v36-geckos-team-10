@@ -3,6 +3,9 @@ import { FaTimes } from "react-icons/fa";
 import { transformCss, transformHtml } from "../features/exportFunctionality";
 import { Dialog, Transition } from '@headlessui/react';
 import { ReactComponent as DockFIll } from "../assets/dockfill.svg";
+import { toast } from 'react-toastify';
+
+
 
 export const ExportModal= ({ changeModal, modalContent }) => {
 
@@ -79,7 +82,7 @@ ${transformCss(modalContent).join('\n')}
                         <button className="z-50 bg-gray-100 flex rounded focus:outline-none border-2 shadow border-black"  
                         onClick={() => {
                         navigator.clipboard.writeText( htmlCode );
-                        alert("Copied")
+                        toast.success("Html Copied to Clipboard")
                         }}>
                               <DockFIll/>
                           </button>
@@ -96,7 +99,7 @@ ${transformCss(modalContent).join('\n')}
                           <button className="flex rounded focus:outline-none border-2 shadow border-black"  
                           onClick={() => {
                           navigator.clipboard.writeText( cssCode )
-                          alert("Copied")
+                          toast.success("Css Copied to Clipboard")
                           }}>
                             <DockFIll />
                           </button>
