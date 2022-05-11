@@ -5,8 +5,14 @@ import Loader from '../pageElements/loader/loader';
 import ExportModal from "../pageElements/ExportModal";
 import { toast } from "react-toastify";
 import { ReactComponent as NoData } from "../assets/no_data.svg";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Workspace = () => {
+  const [ user, loading ] = useAuthState(auth);
+  const navigate = useNavigate();
+
     // Loading state 
     const [isLoading, setIsLoading] = useState(true);
     const [buildingBlocks, setBuildingBlocks] = useState(['nav', 'hero2', 'div2', 'table', 'footer']);
@@ -21,10 +27,17 @@ const Workspace = () => {
     }
 
     useEffect(() => {
+      if (loading) return;
+      if (!user) return navigate("/signin");
+    })
+    
+
+    useEffect(() => {
+ 
         // Wait for some seconds
         setTimeout(() => {
           setIsLoading(false);
-        }, 9000);
+        }, 6200);
       }, []);
     
     return  isLoading ?

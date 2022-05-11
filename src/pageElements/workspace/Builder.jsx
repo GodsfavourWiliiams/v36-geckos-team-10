@@ -29,7 +29,7 @@ const Builder = ({ buildingBlocks, setBuildingBlocks, changeModal, toggleModal }
             </main>
             <div className="md:hidden block">
                 {/* this toogles the export modal on mobile view */}
-                  <BtnStyled customStyle={`bg-indigo-600 fixed bottom-4 right-3 border border-transparent rounded-lg py-3 px-8  text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-50 ` } 
+                  <BtnStyled customStyle={`bg-indigo-600 fixed bottom-4 right-3 border border-transparent rounded-lg py-3 px-8  text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-50 `} 
                   clickFunc={() => {toggleModal[1](!toggleModal[0])}} innerText='Export' />
                 </div>
         </>

@@ -122,7 +122,7 @@ function Footer() {
           </ul>
 
           {/* Copyrights note */}
-          <div className="text-sm text-gray-600 mr-4">Made by <a className="text-blue-600 hover:underline" href="/">Geckos-Team-10</a>. All rights reserved.</div>
+          <div className="text-sm text-gray-600 mr-4">V2 Made by <a className="text-blue-600 hover:underline" href="/">Williams Godsfavour</a>. All rights reserved.</div>
 
         </div>
 

@@ -1,10 +1,10 @@
-
 import { useState, Fragment } from 'react';
 import './loader.css';
 import { Dialog, Transition } from '@headlessui/react';
 
 const Loader = () => {
     const [status, setStatus] = useState(true);
+    
   return (
     <Transition.Root show={status} as={Fragment}>
     <Dialog as="div" className="fixed z-50 inset-0 overflow-y-auto " onClose={setStatus}>
@@ -35,93 +35,11 @@ const Loader = () => {
           leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
         >
           <div className="inline-block align-middle max-w-4xl">
-             
-              <div className="wrapper1">
-         <div className="wrapper2">
-            <div className="box">
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
+          <div className='min-h-screen flex flex-col items-center justify-center w-full '>
+            <div class="progress">
+              <div class="color"></div>
             </div>
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            
-        </div>
-        <div className="box">
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            
-        </div>
-        <div className="box">
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            <div className="cube">
-                <div className="wall front"></div>
-                <div className="wall back"></div>
-                <div className="wall left1"></div>
-                <div className="wall right1"></div>
-                <div className="wall top1"></div>
-                <div className="wall bottom1"></div>
-            </div>
-            
-        </div>
-       
-            </div>
-            </div>
+          </div>
           </div>
         </Transition.Child>
       </div>

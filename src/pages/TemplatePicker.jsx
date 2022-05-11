@@ -1,11 +1,21 @@
-import { Link } from "react-router-dom";
+import React, { useEffect }  from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import Footer from '../pageElements/Footer';
 import Saly from '../assets/pre.png';
-import React from "react";
 import Navbar from "../pageElements/Navbar";
 import Banner from "../pageElements/Banner";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from './firebase/firebase';
 
 export function TemplatePicker() {
+  const [ user ] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) return navigate("/signin");
+  });
+
+
     return (
       <React.Fragment>
         <Banner/>

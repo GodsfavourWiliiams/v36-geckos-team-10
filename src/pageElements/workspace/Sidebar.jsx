@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Profile } from '../../assets/User_circle.svg';
 import { ReactComponent as SignOut } from '../../assets/Sign_out_squre.svg';
 
+import { logout } from "../../pages/firebase/firebase";
+
 
 const Sidebar = ({ handleAdd, toggleModal }) => {
     //Different types of tags can be added bellow and they will show up in the dropdown menu, if the tag has 2 or 3 at the end, it will create 2 or 3 elements.
@@ -16,6 +18,8 @@ const Sidebar = ({ handleAdd, toggleModal }) => {
     const [collapseShow, setCollapseShow] = useState(false);
     const [navbarOpen, setNavbarOpen] = useState(false);
     const navigate = useNavigate();
+
+
 
   return (
         <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 px-2 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-lg bg-white flex flex-wrap items-center justify-between relative md:w-72 z-50">
@@ -38,6 +42,8 @@ const Sidebar = ({ handleAdd, toggleModal }) => {
           <button
             className="cursor-pointer border-0 py-1 md:block hidden"
             onClick={() => {
+              logout();
+              navigate("/signin");
              if (window.confirm("Are you sure you want to Log Out?")) {navigate('/signin')}
           }}
           >

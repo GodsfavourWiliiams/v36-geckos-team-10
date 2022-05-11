@@ -39,12 +39,12 @@ function Modal({
       <Transition
         className="fixed inset-0 z-50 bg-gray-500 bg-opacity-75 transition-opacity backdrop-blur-sm"
         show={show}
-        enter="transition ease-out duration-200"
-        enterStart="opacity-0"
-        enterEnd="opacity-100"
-        leave="transition ease-out duration-100"
-        leaveStart="opacity-100"
-        leaveEnd="opacity-0"
+        enter="ease-out duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="ease-in duration-200"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
         aria-hidden="true"
       />
 
