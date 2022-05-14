@@ -36,9 +36,7 @@ const Loader = () => {
         >
           <div className="inline-block align-middle max-w-4xl">
           <div className='min-h-screen flex flex-col items-center justify-center w-full '>
-            <div class="progress">
-              <div class="color"></div>
-            </div>
+          <div class="loader"></div>
           </div>
           </div>
         </Transition.Child>

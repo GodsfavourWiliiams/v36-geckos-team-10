@@ -56,15 +56,15 @@ const Sidebar = ({ handleAdd, toggleModal }) => {
           </div>
           
           <div className={"absolute top-24 right-3 z-40 md:hidden text-base list-none bg-white rounded divide-y divide-gray-100 shadow  " +  (navbarOpen ? " block" : "hidden")}>
-                  <div className="py-3 px-4">
-                    <span className="block text-sm text-gray-900 ">Williams Godsfavour</span>
-                    <span className="block text-sm font-medium text-gray-500 truncate ">name@flowbite.com</span>
-                  </div>
-                      <ul className="">
-                          <Link to='/signin'>
-                            <span className="block py-3 px-4 text-sm hover:text-white rounded hover:bg-indigo-500 ">Sign Out</span>
-                          </Link>
-                        </ul> 
+                      <div className="">
+                            <span className="block py-3 px-4 text-sm hover:text-white rounded hover:bg-indigo-500 "
+                            onClick={() => {
+                              logout();
+                              navigate("/signin");
+                             if (window.confirm("Are you sure you want to Log Out?")) {navigate('/signin')}
+                          }}
+                          >Sign Out</span>
+                        </div> 
                     </div> 
           {/* Collapse */}
           <div

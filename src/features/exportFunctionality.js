@@ -4,7 +4,7 @@ export const transformHtml = (blocks) => {
     return blocks.map(block => {
         switch (block) {
             case "nav":
-                return '<nav class="navBar">Nav</nav>';
+                return exportData.NavBar;
                 break;
             case "div":
                 return '<div class="divBar">Div</div>';
@@ -16,7 +16,7 @@ export const transformHtml = (blocks) => {
                 return '<div class="div3">\n\t<div class="div3--div">Div</div>\n\t<div class="div3--div">Div</div>\n\t<div class="div3--div">Div</div>\n</div>';
                 break;
             case "footer":
-                return '<footer class="footerBar">footer</footer>';
+                return exportData.footer;
                 break;
             case "img":
                 return '<img class="page--img" src="/* img url */" alt="/* img description */">';
@@ -64,15 +64,6 @@ export const transformCss = (blocks) => {
     background: lightblue;
     border-radius: 8px;
 }`
-    const navBarCss = `.navBar {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: lightblue;
-}`
-
     const div3BarCss = `.div3 {
     margin-top: 50px;
     width: 100%;
@@ -124,16 +115,6 @@ export const transformCss = (blocks) => {
     margin-left: 20px;
 }`
 
-    const footerBarCss = `.footerBar {
-    margin-top: 50px;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: lightblue;
-}`
-
     const imgCss = `.page--img {
     margin-top: 50px;
     width: 100%;
@@ -161,7 +142,7 @@ export const transformCss = (blocks) => {
         if (blocks.indexOf(block) !== index) return block;
         switch (block) {
             case "nav":
-                return navBarCss;
+                return exportData.navBarCss;
                 break;
             case "div":
                 return divCss;
@@ -173,7 +154,7 @@ export const transformCss = (blocks) => {
                 return div3BarCss;
                 break;
             case "footer":
-                return footerBarCss;
+                return exportData.footerCss;
                 break;
             case "img":
                 return imgCss;

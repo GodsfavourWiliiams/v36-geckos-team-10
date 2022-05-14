@@ -22,7 +22,7 @@ function Reset() {
     </Link>
    <div className=" lg:w-1/3 md:w-1/2 w-full my-8 text-center">
        <p aria-label="Login to your account" className="text-2xl mb-1 font-extrabold leading-6 text-gray-800">
-           Login to your account
+           Reset your password
        </p>
   
        <div className="w-full flex items-center justify-between py-5">
@@ -40,15 +40,15 @@ function Reset() {
                 />
 
                 <button className="bg-indigo-600 border border-transparent rounded-lg py-3 px-8 mb-3 text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full" onClick=
-                {() =>{
+                {(e) =>{
                     sendPasswordReset(email);
-                  
+                    e.preventDefault()
                   }}
                 >
                 Send password to email
               </button>
                 <div>
-              <p className="text-center" >Not a member? <Link to="/signin">Register</Link></p>
+              <p className="text-center " >Not a member? <Link to="/signup" className="text-indigo-500">Register</Link></p>
               </div>
             </form>
         </div>

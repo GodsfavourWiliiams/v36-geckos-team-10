@@ -37,7 +37,7 @@ const Workspace = () => {
         // Wait for some seconds
         setTimeout(() => {
           setIsLoading(false);
-        }, 6200);
+        }, 6000);
       }, []);
     
     return  isLoading ?
@@ -48,7 +48,7 @@ const Workspace = () => {
             <Sidebar handleAdd={addBlocks} toggleModal={[modalState, setModalState]} />
             {buildingBlocks.length === 0 ? 
                     <div className="ws-builder min-h-screen flex items-center justify-center">
-                        <NoData className="-mt-24 w-auto px-8 " />123
+                        <NoData className="-mt-24 w-auto px-8 " />
                     </div>
                 : 
             <Builder buildingBlocks={buildingBlocks} setBuildingBlocks={setBuildingBlocks} toggleModal={[modalState, setModalState]} changeModal={setModalContent} />

@@ -1,5 +1,5 @@
 export const exportData = {
-table: [`<table id="customers">
+    table: [`<table id="customers">
     <tr>
         <th>Company</th>
         <th>Contact</th>
@@ -15,9 +15,8 @@ table: [`<table id="customers">
         <td>Christina Berglund</td>
         <td>Sweden</td>
     </tr>
-</table>`
-],
-tableCss: [`#customers {
+</table>`],
+    tableCss: [`#customers {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
         width: 100%;
@@ -38,9 +37,8 @@ tableCss: [`#customers {
         text-align: left;
         background-color: #4CAF50;
         color: white;
-      }`
-],
-form: [`<div class="container">
+      }`],
+    form: [`<div class="container">
 <form>
     <div class="row">
         <div class="col-25">
@@ -82,10 +80,9 @@ form: [`<div class="container">
         <button>Submit</button>
         </div>
     </form>
-</div>`
-],
+</div>`],
 
-formCss: [`input[type=text], select, textarea {
+    formCss: [`input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -126,9 +123,8 @@ input[type=submit]:hover {
 .col-75 {
    width: 100%;
     margin-top: 0;
-}`]
-,
-blog: [`
+}`],
+    blog: [`
 
 <!-- Note -->
 <div style="background:yellow;padding:5px">
@@ -183,7 +179,7 @@ blog: [`
 </div>
 
 `],
-blogCss : [`
+    blogCss: [`
 /* Header/logo Title */
 .header {
   padding: 60px;
@@ -253,9 +249,8 @@ blogCss : [`
     flex-direction: column;
   }
 }
-}`
-],
-sidenav: [`
+}`],
+    sidenav: [`
   <div class="">
     <div id="mySidenav" class="sidenav">
        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -284,7 +279,7 @@ function closeNav() {
 }
 </script>
 `],
-sidenavCss: [`
+    sidenavCss: [`
 
 /* Style the side navigation */
 .sidenav {
@@ -347,10 +342,9 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}`
-],
-hero:[
-    `<section class="hero-section">
+}`],
+    hero: [
+        `<section class="hero-section">
         <div class="container">
             <div class="hero-row">
                 <div class="hero-col">
@@ -366,9 +360,8 @@ hero:[
             </div>
         </div>
     <section>`
-]
-,
-heroCss: [`.hero {
+    ],
+    heroCss: [`.hero {
     width: 100%;
     height: 100vh;
   }
@@ -442,7 +435,7 @@ heroCss: [`.hero {
       width: 100%;
     }
   }`],
-  imageGallery: [`<h2>Responsive Image Gallery</h2>
+    imageGallery: [`<h2>Responsive Image Gallery</h2>
     <div class="responsive">
       <div class="gallery">
         <a target="_blank" href="img_5terre.jpg">
@@ -486,9 +479,8 @@ heroCss: [`.hero {
       <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
       <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
     </div>
-  `
-  ],
-  imageGalleryCss: [`div.gallery {
+  `],
+    imageGalleryCss: [`div.gallery {
     border: 1px solid #ccc;
   }
   
@@ -534,19 +526,17 @@ heroCss: [`.hero {
     display: table;
     clear: both;
   }
-  `
-],
+  `],
 
-breadcrumb:[`<h2>Breadcrumb Pagination</h2>
+    breadcrumb: [`<h2>Breadcrumb Pagination</h2>
 <ul class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="#">Pictures</a></li>
   <li><a href="#">Summer 15</a></li>
   <li>Italy</li>
-</ul>`
-],
+</ul>`],
 
-breadcrumbCss:[`ul.breadcrumb {
+    breadcrumbCss: [`ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
   background-color: #eee;
@@ -567,9 +557,8 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
-}`
-],
-checkOutForm: [`
+}`],
+    checkOutForm: [`
 <h2>Responsive Checkout Form</h2>
 <p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p>
 <div class="row">
@@ -649,7 +638,7 @@ checkOutForm: [`
   </div>
 </div>
 `],
-checkOutFormCss:[`
+    checkOutFormCss: [`
 .row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
@@ -733,5 +722,313 @@ span.price {
   float: right;
   color: grey;
 }
-`]
+`],
+    NavBar: [
+        `<nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">DesignX</label>
+        <ul>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </nav>
+      <section></section>`
+    ],
+    navBarCss: [`
+    *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: montserrat;
+    }
+    nav{
+      background: #0082e6;
+      height: 80px;
+      width: 100%;
+    }
+    label.logo{
+      color: white;
+      font-size: 35px;
+      line-height: 80px;
+      padding: 0 100px;
+      font-weight: bold;
+    }
+    nav ul{
+      float: right;
+      margin-right: 20px;
+    }
+    nav ul li{
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 5px;
+    }
+    nav ul li a{
+      color: white;
+      font-size: 17px;
+      padding: 7px 13px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    a.active,a:hover{
+      background: #1b9bff;
+      transition: .5s;
+    }
+    .checkbtn{
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+    }
+    #check{
+      display: none;
+    }
+    @media (max-width: 952px){
+      label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+      }
+      nav ul li a{
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 858px){
+      .checkbtn{
+        display: block;
+      }
+      ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+      }
+      nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+      nav ul li a{
+        font-size: 20px;
+      }
+      a:hover,a.active{
+        background: none;
+        color: #0082e6;
+      }
+      #check:checked ~ ul{
+        left: 0;
+      }
+    }
+    section{
+      background: url(bg1.jpg) no-repeat;
+      background-size: cover;
+      height: calc(100vh - 80px);
+    }`],
+    footer: [`
+    <footer>
+<div class="row primary">
+  <div class="column about">
+
+  <h3>Foolish Developer</h3>
+
+   <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+      voluptatem corporis error non,
+  </p>
+
+  <div class="social">
+    <i class="fa-brands fa-facebook-square"></i>
+    <i class="fa-brands fa-instagram-square"></i>
+    <i class="fa-brands fa-twitter-square"></i>
+    <i class="fa-brands fa-youtube-square"></i>
+    <i class="fa-brands fa-whatsapp-square"></i>
+  </div>
+</div>
+
+<div class="column links">
+<h3>Some Links</h3>
+
+ <ul>
+
+  <li>
+   <a href="#faq">F.A.Q</a>
+  </li>
+  <li>
+   <a href="#cookies-policy">Cookies Policy</a>
+  </li>
+  <li>
+   <a href="#terms-of-services">Terms Of Service</a>
+  </li>
+  <li>
+   <a href="#support">Support</a>
+  </li>
+ </ul>
+
+</div>
+
+
+<div class="column links">
+  <h3>Some Links</h3>
+   <ul>
+    <li>
+     <a href="#faq">F.A.Q</a>
+    </li>
+    <li>
+     <a href="#cookies-policy">Cookies Policy</a>
+    </li>
+    <li>
+    <a href="#terms-of-services">Terms Of Service</a>
+    </li>
+    <li>
+    <a href="#support">Support</a>
+    </li>
+  </ul>
+</div>
+
+<div class="column subscribe">
+ <h3>Newsletter</h3>
+  <div>
+   <input type="email" placeholder="Your email id here" />
+   <button>Subscribe</button>
+  </div>
+
+</div>
+
+</div>
+
+<div class="row copyright">
+  <div class="footer-menu">
+
+  <a href="">Home</a>
+  <a href="">About</a>
+  <a href="">Contact</a>
+  <a href="">Blog</a>
+  <a href="">Social</a>
+
+  </div>
+   <p>Copyright &copy; 2021 Foolish Developer</p>
+</div>
+</footer>`],
+    footerCss: [`
+    footer {
+      background-color: #121315;
+      color: #a7a7a7;
+      font-size: 16px;
+    }
+    footer * {
+      font-family: "Poppins", sans-serif;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+    }
+    .row {
+      padding: 1em 1em;
+    }
+    .row.primary {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      align-items: stretch;
+    }
+    .column {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 2em;
+      min-height: 15em;
+    }
+    h3 {
+      width: 100%;
+      text-align: left;
+      color: white;
+      font-size: 1.4em;
+      white-space: nowrap;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+    }
+    li:not(:first-child) {
+      margin-top: 0.8em;
+    }
+    ul li a {
+      color: #a7a7a7;
+      text-decoration: none;
+    }
+    ul li a:hover {
+      color: #2a8ded;
+    }
+    .about p {
+      text-align: justify;
+      line-height: 2;
+      margin: 0;
+    }
+    input,
+    button {
+      font-size: 1em;
+      padding: 1em;
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #c7940a;
+      color: #ffffff;
+    }
+    div.social {
+      display: flex;
+      justify-content: space-around;
+      font-size: 2.4em;
+      flex-direction: row;
+      margin-top: 0.5em;
+    }
+    .social i {
+      color: #bac6d9;
+    }
+    
+    .copyright {
+      padding: 0.3em 1em;
+      background-color: #25262e;
+    }
+    .footer-menu{
+      float: left;
+        margin-top: 10px;
+    }
+    
+    .footer-menu a{
+      color: #cfd2d6;
+      padding: 6px;
+    
+      text-decoration: none;
+    }
+    .footer-menu a:hover{
+      color: #27bcda;
+    }
+    .copyright p {
+      font-size: 0.9em;
+      text-align: right;
+    }
+    @media screen and (max-width: 850px) {
+      .row.primary {
+        grid-template-columns: 1fr;
+      }
+    
+    }`]
 }

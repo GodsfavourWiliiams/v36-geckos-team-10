@@ -8,7 +8,7 @@ import { auth, logout } from "../pages/firebase/firebase";
 export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [user] = useAuthState(auth);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   
   const signOut = () => {

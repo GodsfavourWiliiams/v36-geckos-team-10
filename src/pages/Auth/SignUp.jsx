@@ -117,7 +117,7 @@ export default function SignUp() {
 
                 <button className="bg-indigo-600 border border-transparent rounded-lg py-3 px-8  text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full" 
                 onClick={register}
-                >Sign In</button>
+                >Sign Up</button>
             </form>
              </div>
         </div>
